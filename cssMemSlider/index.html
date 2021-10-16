@@ -9,16 +9,16 @@
   <body>
     <div class="slider__wrapper">
       <ul class="slides">
-        <li class="slide">
+        <li class="slide" id="slide-1">
           <img src="./assets/img/1.jpg" alt="Mem" class="slide__img" />
         </li>
-        <li class="slide">
+        <li class="slide" id="slide-2">
           <img src="./assets/img/2.jpg" alt="Mem" class="slide__img" />
         </li>
-        <li class="slide">
+        <li class="slide" id="slide-3">
           <img src="./assets/img/3.jpg" alt="Mem" class="slide__img" />
         </li>
-        <li class="slide">
+        <li class="slide" id="slide-4">
           <img src="./assets/img/4.jpg" alt="Mem" class="slide__img" />
         </li>
       </ul>
@@ -37,10 +37,18 @@
           <input type="radio" name="toggle" id="btn-3" />
           <input type="radio" name="toggle" id="btn-4" />
 
-          <label for="btn-1"></label>
-          <label for="btn-2"></label>
-          <label for="btn-3"></label>
-          <label for="btn-4"></label>
+          <a href="#slide-1">
+            <label for="btn-1"></label>
+          </a>
+          <a href="#slide-2">
+            <label for="btn-2"></label>
+          </a>
+          <a href="#slide-3">
+            <label for="btn-3"></label>
+          </a>
+          <a href="#slide-4">
+            <label for="btn-4"></label>
+          </a>
         </div>
       </div>
     </div>
