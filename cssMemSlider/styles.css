@@ -7,12 +7,12 @@
 }
 
 html {
-  font-size: 20px;
   height: 100vh;
   background: linear-gradient(to bottom, rgb(196, 126, 35), rgb(245, 158, 44));
 }
 
 body {
+  font-size: 25px;
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -21,7 +21,7 @@ body {
 }
 
 .slider__wrapper {
-  width: 51rem;
+  width: 64rem;
   margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -117,8 +117,8 @@ input[type="radio"] {
   content: "";
   display: inline-block;
   border: none;
-  height: 0.9rem;
-  width: 0.9rem;
+  height: 1.1rem;
+  width: 1.1rem;
   background-color: rgb(218, 134, 26);
   border-radius: 50%;
   transition: all 0.4s ease-out;
@@ -212,6 +212,10 @@ input[type="radio"] {
 }
 
 @media (max-width: 768px) {
+  body {
+    font-size: 20px;
+  }
+
   .slider__bottom {
     margin: 1rem 0;
   }
