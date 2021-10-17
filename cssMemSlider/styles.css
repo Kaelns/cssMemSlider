@@ -28,18 +28,9 @@ body {
 
 .slides {
   list-style: none;
-  height: 40vh;
-  /* width: 100%; */
+  height: 50vh;
   overflow: hidden;
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-}
-
-.slides::-webkit-scrollbar {
-  height: 0;
-  width: 0;
 }
 
 .slide {
@@ -47,13 +38,31 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
+  overflow: hidden;
   /* transform: translateX(-100%); */
-  /* transition: transform 0.2s linear; */
+  transition: transform 0.3s linear;
 }
 
 .slide__img {
   height: 100%;
   object-fit: cover;
+  /* margin: 0 20px; */
+}
+
+#btn-1:checked ~ .slides > .slide {
+  transform: translateX(0);
+}
+
+#btn-2:checked ~ .slides > .slide {
+  transform: translateX(-100%);
+}
+
+#btn-3:checked ~ .slides > .slide {
+  transform: translateX(-200%);
+}
+
+#btn-4:checked ~ .slides > .slide {
+  transform: translateX(-300%);
 }
 
 /*_________________Slider bottom_________________*/
@@ -73,7 +82,7 @@ body {
   display: flex;
 }
 
-.slider__controls input[type="radio"] {
+input[type="radio"] {
   opacity: 0;
   width: 0;
   height: 0;
@@ -101,10 +110,22 @@ body {
   background-color: rgb(145, 10, 10);
 }
 
-#btn-1:checked ~ a > label[for="btn-1"]:before,
-#btn-2:checked ~ a > label[for="btn-2"]:before,
-#btn-3:checked ~ a > label[for="btn-3"]:before,
-#btn-4:checked ~ a > label[for="btn-4"]:before {
+#btn-1:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-1"]:before,
+#btn-2:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-2"]:before,
+#btn-3:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-3"]:before,
+#btn-4:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-4"]:before {
   background-color: transparent;
   border: solid 4px rgb(145, 10, 10);
 }
