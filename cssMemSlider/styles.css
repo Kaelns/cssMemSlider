@@ -15,7 +15,6 @@ html {
 body {
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
-  /* color: white; */
   display: flex;
   justify-content: center;
   cursor: default;
@@ -43,11 +42,11 @@ body {
 
 .slide {
   min-width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   overflow: hidden;
   transition: transform 0.3s linear;
+  border-radius: 0.5rem;
 }
 
 .slide__img {
@@ -191,4 +190,45 @@ input[type="radio"] {
   > label[for="btn-4"]:active:before {
   background-color: transparent;
   border: solid 4px rgb(255, 0, 0);
+}
+
+@media (max-width: 1024px) {
+  .slider__wrapper {
+    width: 95vw;
+  }
+
+  .slides-text__wrapper {
+    width: 100%;
+  }
+
+  .slider__bottom {
+    justify-content: start;
+    flex-direction: column-reverse;
+  }
+
+  .slider__controls {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider__bottom {
+    margin: 1rem 0;
+  }
+
+  .slides {
+    height: max-content;
+    background: linear-gradient(to bottom, #c98f12, #dfa833);
+  }
+
+  .slide {
+    align-items: center;
+  }
+
+  .slide__img {
+    height: max-content;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 0.5rem;
+  }
 }
