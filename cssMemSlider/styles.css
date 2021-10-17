@@ -6,22 +6,29 @@
   margin: 0;
 }
 
-body {
+html {
   font-size: 20px;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgb(196, 126, 35), rgb(245, 158, 44));
+}
+
+body {
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  background-color: rgb(94, 94, 94);
+  /* color: white; */
   display: flex;
   justify-content: center;
   cursor: default;
 }
 
 .slider__wrapper {
-  width: 60vw;
+  width: 51rem;
   margin: 1rem;
   padding: 1rem;
-  background-color: rgb(40, 40, 40);
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom, #ebd7ab, #dfd8ca, #e9cd90);
+  background-color: rgb(165, 93, 0);
+  transition: all 0.3s ease;
 }
 
 /*_________________Slides_________________*/
@@ -31,6 +38,7 @@ body {
   height: 50vh;
   overflow: hidden;
   display: flex;
+  border-radius: 0.5rem;
 }
 
 .slide {
@@ -45,6 +53,7 @@ body {
 .slide__img {
   height: 100%;
   object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 #btn-1:checked ~ .slides > .slide,
@@ -72,18 +81,19 @@ body {
 .slider__bottom {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin: 2.5rem 0 1rem;
 }
 
 .slides-text__wrapper {
   list-style: none;
-  width: 50%;
+  width: 70%;
   overflow: hidden;
   display: flex;
 }
 
 .slide__text {
   min-width: 100%;
+  font-weight: bold;
   transition: transform 0.3s linear;
 }
 
@@ -108,15 +118,19 @@ input[type="radio"] {
   content: "";
   display: inline-block;
   border: none;
-  height: 1.1rem;
-  width: 1.1rem;
-  background-color: grey;
+  height: 0.9rem;
+  width: 0.9rem;
+  background-color: rgb(218, 134, 26);
   border-radius: 50%;
   transition: all 0.4s ease-out;
 }
 
 .slider__controls label:hover:before {
   background-color: rgb(145, 10, 10);
+}
+
+.slider__controls label:active:before {
+  background-color: rgb(255, 0, 0);
 }
 
 #btn-1:checked
@@ -136,5 +150,45 @@ input[type="radio"] {
   > .slider__controls
   > label[for="btn-4"]:before {
   background-color: transparent;
+  border: solid 4px rgb(218, 134, 26);
+}
+
+#btn-1:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-1"]:hover:before,
+#btn-2:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-2"]:hover:before,
+#btn-3:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-3"]:hover:before,
+#btn-4:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-4"]:hover:before {
+  background-color: transparent;
   border: solid 4px rgb(145, 10, 10);
+}
+
+#btn-1:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-1"]:active:before,
+#btn-2:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-2"]:active:before,
+#btn-3:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-3"]:active:before,
+#btn-4:checked
+  ~ .slider__bottom
+  > .slider__controls
+  > label[for="btn-4"]:active:before {
+  background-color: transparent;
+  border: solid 4px rgb(255, 0, 0);
 }
