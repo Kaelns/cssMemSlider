@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -113,41 +111,29 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.slider__controls label:before {
+.slider__controls label span {
   content: "";
   display: inline-block;
   border: none;
-  height: 1.1rem;
-  width: 1.1rem;
+  height: 1.3rem;
+  width: 1.3rem;
   background-color: rgb(218, 134, 26);
   border-radius: 50%;
   transition: all 0.4s ease-out;
 }
 
-.slider__controls label:hover:before {
+.slider__controls label:hover span {
   background-color: rgb(145, 10, 10);
 }
 
-.slider__controls label:active:before {
+.slider__controls label:active span {
   background-color: rgb(255, 0, 0);
 }
 
-#btn-1:checked
-  ~ .slider__bottom
-  > .slider__controls
-  > label[for="btn-1"]:before,
-#btn-2:checked
-  ~ .slider__bottom
-  > .slider__controls
-  > label[for="btn-2"]:before,
-#btn-3:checked
-  ~ .slider__bottom
-  > .slider__controls
-  > label[for="btn-3"]:before,
-#btn-4:checked
-  ~ .slider__bottom
-  > .slider__controls
-  > label[for="btn-4"]:before {
+#btn-1:checked ~ .slider__bottom > .slider__controls > label[for="btn-1"] span,
+#btn-2:checked ~ .slider__bottom > .slider__controls > label[for="btn-2"] span,
+#btn-3:checked ~ .slider__bottom > .slider__controls > label[for="btn-3"] span,
+#btn-4:checked ~ .slider__bottom > .slider__controls > label[for="btn-4"] span {
   background-color: transparent;
   border: solid 4px rgb(218, 134, 26);
 }
@@ -155,19 +141,23 @@ input[type="radio"] {
 #btn-1:checked
   ~ .slider__bottom
   > .slider__controls
-  > label[for="btn-1"]:hover:before,
+  > label[for="btn-1"]:hover
+  span,
 #btn-2:checked
   ~ .slider__bottom
   > .slider__controls
-  > label[for="btn-2"]:hover:before,
+  > label[for="btn-2"]:hover
+  span,
 #btn-3:checked
   ~ .slider__bottom
   > .slider__controls
-  > label[for="btn-3"]:hover:before,
+  > label[for="btn-3"]:hover
+  span,
 #btn-4:checked
   ~ .slider__bottom
   > .slider__controls
-  > label[for="btn-4"]:hover:before {
+  > label[for="btn-4"]:hover
+  span {
   background-color: transparent;
   border: solid 4px rgb(145, 10, 10);
 }
@@ -175,19 +165,23 @@ input[type="radio"] {
 #btn-1:checked
   ~ .slider__bottom
   > .slider__controls
-  > label[for="btn-1"]:active:before,
+  > label[for="btn-1"]:active
+  span,
 #btn-2:checked
   ~ .slider__bottom
   > .slider__controls
-  > label[for="btn-2"]:active:before,
+  > label[for="btn-2"]:active
+  span,
 #btn-3:checked
   ~ .slider__bottom
   > .slider__controls
-  > label[for="btn-3"]:active:before,
+  > label[for="btn-3"]:active
+  span,
 #btn-4:checked
   ~ .slider__bottom
   > .slider__controls
-  > label[for="btn-4"]:active:before {
+  > label[for="btn-4"]:active
+  span {
   background-color: transparent;
   border: solid 4px rgb(255, 0, 0);
 }
@@ -200,15 +194,6 @@ input[type="radio"] {
   .slides-text__wrapper {
     width: 100%;
   }
-
-  .slider__bottom {
-    justify-content: start;
-    flex-direction: column-reverse;
-  }
-
-  .slider__controls {
-    justify-content: center;
-  }
 }
 
 @media (max-width: 768px) {
@@ -216,8 +201,19 @@ input[type="radio"] {
     font-size: 20px;
   }
 
+  .slider__controls label span {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .slider__controls {
+    justify-content: center;
+  }
+
   .slider__bottom {
     margin: 1rem 0;
+    justify-content: start;
+    flex-direction: column-reverse;
   }
 
   .slides {
